@@ -12,9 +12,17 @@ public class Articulo implements Producto{
 		return false;
 	}
 
+	
+	public boolean haySuficientes(int cantALlevar, int cantDisponible) {
+		if(cantALlevar<cantDisponible)
+			return true;
+		return false;
+	}
 	@Override
 	public int calcularTarifa(int cantALlevar) {
-		return cantALlevar*this.precioUnitario;
+		if(haySuficientes(cantALlevar,cantDisponible))
+			return cantALlevar*this.precioUnitario;
+		return 0;
 	}
 	
 	public Articulo(String nombre, int cantDisponible, int precioUnitario) {

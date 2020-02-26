@@ -2,34 +2,35 @@
 public class Servicio implements Producto{
 	
 	private String nombre;
-    private int cant;
-    private int precio;
+    private int cantHoras;
+    private int precioXHora;
 
 	@Override
-	public boolean estaDisponible(int cant) {
-		if(cant>0)
+	public boolean estaDisponible(int cantHoras) {
+		if(cantHoras>0)
 			return true;
 		return false;
 	}
 
 	@Override
-	public int calcularTarifa(int cant) {
-		return cant*this.precio;
+	public int calcularTarifa(int cantHoras) {
+		return cantHoras*this.precioXHora;
 	}
 	
-	public Servicio(String nombre, int cant, int precio) {
+	public Servicio(String nombre, int cantHoras, int precioXHora) {
 		this.nombre=nombre;
-		this.cant=cant;
-		this.precio=precio;
+		this.cantHoras=cantHoras;
+		this.precioXHora=precioXHora;
     }
 	
+	@Override
 	public int getCant() {
-		return this.cant;
+		return this.cantHoras;
 	}
 
 	@Override
 	public int getPrecio() {
-		return this.precio;
+		return this.precioXHora;
 	}
 
 	@Override

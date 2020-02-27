@@ -13,14 +13,14 @@ public class Articulo implements Producto{
 	}
 
 	
-	public boolean haySuficientes(int cantALlevar, int cantDisponible) {
+	public boolean haySuficienteStock(int cantALlevar, int cantDisponible) {
 		if(cantALlevar<cantDisponible)
 			return true;
 		return false;
 	}
 	@Override
 	public int calcularTarifa(int cantALlevar) {
-		if(haySuficientes(cantALlevar,cantDisponible))
+		if(haySuficienteStock(cantALlevar,cantDisponible))
 			return cantALlevar*this.precioUnitario;
 		return 0;
 	}

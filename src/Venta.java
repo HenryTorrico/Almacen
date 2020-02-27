@@ -2,6 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Venta {
+	int total = 0;
 	List<Producto> listaProductos = new LinkedList<>();
 	
 	public void addProduct(Producto producto) {
@@ -9,11 +10,10 @@ public class Venta {
 	}
 	
 	public int rate(Producto producto) {
-		return producto.calcularTarifa(1);
+		return producto.calcularTarifa(producto.getCant());
 	}
 	
-	public int calculate(List<Producto> listaProductos) {
-		int total=0;
+	public int calculateSale(List<Producto> listaProductos) {
 		for(Producto product:listaProductos) {
 			total=total+rate(product);
 		}

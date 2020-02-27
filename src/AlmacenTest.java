@@ -34,15 +34,15 @@ public class AlmacenTest {
 	@Test
 	public void testForCreateProducts() {
 		Venta venta=new Venta();
-		Producto plomeria = new Servicio("Plomeria",10,20); // 3.2
-		Producto platos = new Articulo("Platos",24,15); // 15
-		Producto electricista = new Servicio("Electricista",8,30); // 4.8
-		Producto sarten = new Articulo("Sarten",12,60); // 60
+		Producto plomeria = new Servicio("Plomeria",2,20); // 80
+		Producto platos = new Articulo("Platos",3,15); // 45
+		Producto electricista = new Servicio("Electricista",4,30); // 240
+		Producto sarten = new Articulo("Sarten",5,60); // 300
 		venta.listaProductos.add(plomeria);
 		venta.listaProductos.add(platos);
 		venta.listaProductos.add(electricista);
 		venta.listaProductos.add(sarten);
-		Assert.assertEquals(175, venta.calculate(venta.getProducts())); 
+		Assert.assertEquals(665, venta.calculateSale(venta.getProducts())); 
 	}
 	
 }

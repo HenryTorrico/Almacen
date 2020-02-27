@@ -13,16 +13,10 @@ public class Articulo implements Producto{
 	}
 
 	
-	public boolean haySuficienteStock(int cantALlevar, int cantDisponible) {
-		if(cantALlevar<cantDisponible)
-			return true;
-		return false;
-	}
+
 	@Override
 	public int calcularTarifa(int cantALlevar) {
-		if(haySuficienteStock(cantALlevar,cantDisponible))
-			return cantALlevar*this.precioUnitario;
-		return 0;
+		return cantALlevar*this.precioUnitario;
 	}
 	
 	public Articulo(String nombre, int cantDisponible, int precioUnitario) {

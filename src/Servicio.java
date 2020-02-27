@@ -11,19 +11,10 @@ public class Servicio implements Producto{
 			return true;
 		return false;
 	}
-
-	public boolean haySuficientesHoras(int cantAContratar, int cantHoras) {
-		if(cantAContratar<cantHoras)
-			return true;
-		return false;
-	}
-	
 	
 	@Override
-	public int calcularTarifa(int cantAContratar) {
-		if(haySuficientesHoras(cantAContratar,cantHoras))
-			return (cantAContratar*this.precioXHora*2);
-		return 0;
+	public int calcularTarifa(int cantHorasAContratar) {
+		return (cantHorasAContratar*this.precioXHora*2);
 	}
 	
 	public Servicio(String nombre, int cantHoras, int precioXHora) {
